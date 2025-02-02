@@ -1,5 +1,6 @@
 package org.design.commons.references;
 
+import java.lang.ref.PhantomReference;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -15,6 +16,7 @@ public class SoftReferenceExample {
         int[] largeArray = new int[100000000];
         cache.put("largeArray", new SoftReference<>(largeArray));
 
+        //.get() method of reference may return you referent(content object) or null (if collected by GC)
         if(cache.get("largeArray").get() != null) {
             System.out.println("cache exists....");
         } else {
