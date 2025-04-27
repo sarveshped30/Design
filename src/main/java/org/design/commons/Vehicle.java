@@ -15,12 +15,16 @@ public class Vehicle {
         System.out.println("Vehicle constructor invoked");
     }
 
-    void start() {
+   protected void start() {
         System.out.println("Vehicle started");
     }
 
     public void stop() {
         System.out.println("Vehicle stopped");
+    }
+
+    public long price() {
+        return 100L;
     }
 
     public static void main(String[] args) {
@@ -50,6 +54,10 @@ class Car extends Vehicle {
     @Override
     public void stop() {
         System.out.println("Car stopped");
+    }
+
+    public long price() {
+        return 200L;
     }
 }
 
